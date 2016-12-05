@@ -1,0 +1,15 @@
+PODS:
+  - FTImageSize (0.0.2)
+  - Kingfisher (3.2.2)
+
+DEPENDENCIES:
+  - FTImageSize (~> 0.0.2)
+  - Kingfisher
+
+SPEC CHECKSUMS:
+  FTImageSize: 5a10746070f43c46288903ae75c3a82d7906cae7
+  Kingfisher: 821466474ad7ffc375a4aecadfa05068cfed67b3
+
+PODFILE CHECKSUM: 88e954ca9e7242cf58db87825dab3e775066c3ab
+
+COCOAPODS: 1.2.0.beta.1
