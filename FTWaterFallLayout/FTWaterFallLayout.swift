@@ -8,15 +8,18 @@
 
 import UIKit
 
-public protocol FTWaterFallLayoutDelegate: NSObjectProtocol {
+@objc public protocol FTWaterFallLayoutDelegate {
+    
     func ftWaterFallLayout(layout: FTWaterFallLayout, heightForItem atIndex: IndexPath) -> CGFloat
+
+    @objc optional func ftWaterFallLayout(layout: FTWaterFallLayout, heightForHeader atSection: NSInteger) -> CGFloat
 }
 
 public class FTWaterFallLayout: UICollectionViewFlowLayout {
     
-    public var numberOfColumns: NSInteger = 2 {didSet{self.configure()}}
-    public var sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10){didSet{self.configure()}}
-    public var itemMaginSize: CGSize = CGSize(width: 10, height: 10){didSet{self.configure()}}
+    public var numberOfColumns: NSInteger = 2
+    public var sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    public var itemMaginSize: CGSize = CGSize(width: 10, height: 10)
     public var delegate : FTWaterFallLayoutDelegate?
     
     fileprivate var itemWidth: CGFloat = 0
@@ -27,19 +30,30 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     fileprivate func configure() {
         layoutAttributes.removeAll()
         for i in 0..<self.numberOfColumns{
-            heightsForEachColumn[i] = sectionInsets.top
+            heightsForEachColumn[i] = self.headerHeightForSection(section: 0) + sectionInsets.top
         }
         if self.collectionView != nil {
             itemWidth = ((self.collectionView?.frame.size.width)! - self.sectionInsets.left - self.sectionInsets.right - (self.itemMaginSize.width * CGFloat(self.numberOfColumns - 1)))/CGFloat(self.numberOfColumns)
         }
     }
     
-    fileprivate func itemHeightForIndexPath(indexPath: IndexPath) -> CGFloat {
-        if (delegate != nil) {
-            return (delegate?.ftWaterFallLayout(layout: self, heightForItem: indexPath))!
+    fileprivate func headerHeightForSection(section: NSInteger) -> CGFloat {
+        if (delegate == nil) {
+            debugPrint("Please set FTWaterFallLayout.delegate")
+            return 0
         }
-        debugPrint("Please set FTWaterFallLayout.delegate")
+        if let headerHeight : CGFloat = delegate?.ftWaterFallLayout?(layout: self, heightForHeader: section) {
+            return headerHeight
+        }
         return 0
+    }
+    
+    fileprivate func itemHeightForIndexPath(indexPath: IndexPath) -> CGFloat {
+        if (delegate == nil) {
+            debugPrint("Please set FTWaterFallLayout.delegate")
+            return 0
+        }
+        return (delegate?.ftWaterFallLayout(layout: self, heightForItem: indexPath))!
     }
     
     fileprivate func getMinHeightColumn() -> NSInteger {

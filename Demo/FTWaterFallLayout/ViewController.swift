@@ -20,9 +20,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
         self.collectionView.collectionViewLayout = self.collectionViewLayout
         
-        self.imageArray.append(contentsOf: imageArray)
-        self.imageArray.append(contentsOf: imageArray)
-        self.imageArray.append(contentsOf: imageArray)
     }
     
     var collectionViewLayout : FTWaterFallLayout {
@@ -34,25 +31,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return layout
     }
     
-    var imageArray : [String] = [ "http://ww4.sinaimg.cn/mw600/7352978fgw1f6gkap8p45j20f00f074t.jpg",
-                                  "http://ww3.sinaimg.cn/mw600/c0679ecagw1f6ff68fzb1j20gt0gtwhf.jpg",
-                                  "http://ww4.sinaimg.cn/mw600/c0679ecagw1f6ff69na87j20gt08a3z2.jpg",
-                                  "http://ww1.sinaimg.cn/mw600/c0679ecagw1f6ff6ar7v7j20gt0me3yy.jpg",
-                                  "http://ww4.sinaimg.cn/mw600/c0679ecagw1f6ff6csucjj20gt0aijrh.jpg",
-                                  "http://ww4.sinaimg.cn/mw600/7352978fgw1f6gkap8p45j20f00f074t.jpg",
-                                  "http://ww3.sinaimg.cn/mw600/c0679ecagw1f6ff68fzb1j20gt0gtwhf.jpg",
-                                  "http://ww4.sinaimg.cn/mw600/c0679ecagw1f6ff69na87j20gt08a3z2.jpg",
-                                  "http://ww1.sinaimg.cn/mw600/c0679ecagw1f6ff6ar7v7j20gt0me3yy.jpg" ];
-    
+    var imageArray : [String] {
+        var array : [String] = []
+        for _ in 0..<8 {
+            for i in 1..<8 {
+                array.append("https://s3-ap-southeast-1.amazonaws.com/lftdemoimages/0\(i).jpg")
+            }
+        }
+        return array
+    }
     
     
     // MARK: FTWaterFallLayoutDelegate
     
-     func ftWaterFallLayout(layout: FTWaterFallLayout, heightForItem atIndex: IndexPath) -> CGFloat {
+    func ftWaterFallLayout(layout: FTWaterFallLayout, heightForItem atIndex: IndexPath) -> CGFloat {
         // get image size without downloading it !!!!!!
         return FTImageSize.getImageSizeFromImageURL(imageArray[atIndex.item], perferdWidth: (self.view.frame.size.width - 50)/2).height
     }
     
+    func ftWaterFallLayout(layout: FTWaterFallLayout, heightForHeader atSection: NSInteger) -> CGFloat {
+        return 5
+    }
+
     // MARK: UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

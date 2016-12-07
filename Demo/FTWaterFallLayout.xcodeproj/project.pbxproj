@@ -13,6 +13,7 @@
 		2A8C1BBA1DF4FA9C00DAB41A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8C1BB81DF4FA9C00DAB41A /* Main.storyboard */; };
 		2A8C1BBC1DF4FA9C00DAB41A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A8C1BBB1DF4FA9C00DAB41A /* Assets.xcassets */; };
 		2A8C1BBF1DF4FA9C00DAB41A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A8C1BBD1DF4FA9C00DAB41A /* LaunchScreen.storyboard */; };
+		2ABDD2FD1DF683C000B5AFBA /* FTWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABDD2FB1DF683C000B5AFBA /* FTWaterFallLayout.swift */; };
 		4219EFD33B23B5D8B59417BA /* Pods_FTWaterFallLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9215DC91A86FEAF4B5E419D4 /* Pods_FTWaterFallLayout.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2A8C1BBB1DF4FA9C00DAB41A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A8C1BBE1DF4FA9C00DAB41A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A8C1BC01DF4FA9C00DAB41A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2ABDD2FB1DF683C000B5AFBA /* FTWaterFallLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTWaterFallLayout.swift; sourceTree = "<group>"; };
 		6009FF2BF7A1CC6FE66EB5BF /* Pods-FTWaterFallLayout.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTWaterFallLayout.release.xcconfig"; path = "Pods/Target Support Files/Pods-FTWaterFallLayout/Pods-FTWaterFallLayout.release.xcconfig"; sourceTree = "<group>"; };
 		9215DC91A86FEAF4B5E419D4 /* Pods_FTWaterFallLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FTWaterFallLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB9604768032BC67D678AE3 /* Pods-FTWaterFallLayout.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FTWaterFallLayout.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FTWaterFallLayout/Pods-FTWaterFallLayout.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		2A8C1BB31DF4FA9C00DAB41A /* FTWaterFallLayout */ = {
 			isa = PBXGroup;
 			children = (
+				2ABDD2F91DF683C000B5AFBA /* FTWaterFallLayout */,
 				2A8C1BB41DF4FA9C00DAB41A /* AppDelegate.swift */,
 				2A276E941DF5950F0019DD3A /* CollectionViewCell.swift */,
 				2A8C1BB61DF4FA9C00DAB41A /* ViewController.swift */,
@@ -72,6 +75,15 @@
 				2A8C1BC01DF4FA9C00DAB41A /* Info.plist */,
 			);
 			path = FTWaterFallLayout;
+			sourceTree = "<group>";
+		};
+		2ABDD2F91DF683C000B5AFBA /* FTWaterFallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				2ABDD2FB1DF683C000B5AFBA /* FTWaterFallLayout.swift */,
+			);
+			name = FTWaterFallLayout;
+			path = ../../FTWaterFallLayout;
 			sourceTree = "<group>";
 		};
 		5143B003652CB2B44C903C1D /* Pods */ = {
@@ -215,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABDD2FD1DF683C000B5AFBA /* FTWaterFallLayout.swift in Sources */,
 				2A8C1BB71DF4FA9C00DAB41A /* ViewController.swift in Sources */,
 				2A8C1BB51DF4FA9C00DAB41A /* AppDelegate.swift in Sources */,
 				2A276E951DF5950F0019DD3A /* CollectionViewCell.swift in Sources */,

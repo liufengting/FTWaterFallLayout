@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "FTWaterFallLayout"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Water fall layout for collection view"
   s.description  = <<-DESC
     	FTWaterFallLayout. Water fall layout for collection view.
