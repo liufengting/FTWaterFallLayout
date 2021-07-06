@@ -2,11 +2,10 @@
 //  FTWaterFallLayout.h
 //  FTWaterFallLayout
 //
-//  Created by liufengting on 05/12/2016.
-//  Copyright © 2016 LiuFengting. All rights reserved.
+//  Created by LiuFengting on 2021/7/1.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for FTWaterFallLayout.
 FOUNDATION_EXPORT double FTWaterFallLayoutVersionNumber;
