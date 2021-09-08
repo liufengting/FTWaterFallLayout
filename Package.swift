@@ -6,10 +6,10 @@ let package = Package(
     name: "FTImageSize",
     platforms: [ .iOS(.v12), .macOS(.v10_14)],
     products: [
-        .library(name: "FTImageSize", targets: ["FTImageSize"]),
+        .library(name: "FTWaterFallLayout", targets: ["FTWaterFallLayout"]),
     ],
     targets: [
-        .target(name: "FTImageSize", path: "FTImageSize")
+        .target(name: "FTWaterFallLayout", path: "FTWaterFallLayout")
     ],
     swiftLanguageVersions: [.v5]
 )
