@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2A52C0C02693F452003DFE48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52C0BF2693F452003DFE48 /* AppDelegate.swift */; };
-		2A52C0C22693F452003DFE48 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52C0C12693F452003DFE48 /* SceneDelegate.swift */; };
 		2A52C0C42693F452003DFE48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A52C0C32693F452003DFE48 /* ViewController.swift */; };
 		2A52C0C72693F452003DFE48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A52C0C52693F452003DFE48 /* Main.storyboard */; };
 		2A52C0C92693F452003DFE48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A52C0C82693F452003DFE48 /* Assets.xcassets */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		2A52C0BC2693F452003DFE48 /* FTWaterFallLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FTWaterFallLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A52C0BF2693F452003DFE48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A52C0C12693F452003DFE48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2A52C0C32693F452003DFE48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2A52C0C62693F452003DFE48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A52C0C82693F452003DFE48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				2A52C0BF2693F452003DFE48 /* AppDelegate.swift */,
-				2A52C0C12693F452003DFE48 /* SceneDelegate.swift */,
 				2A52C0C32693F452003DFE48 /* ViewController.swift */,
 				2A52C0C52693F452003DFE48 /* Main.storyboard */,
 				2A52C0C82693F452003DFE48 /* Assets.xcassets */,
@@ -168,7 +165,6 @@
 			files = (
 				2A52C0C42693F452003DFE48 /* ViewController.swift in Sources */,
 				2A52C0C02693F452003DFE48 /* AppDelegate.swift in Sources */,
-				2A52C0C22693F452003DFE48 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +316,9 @@
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FTWaterFallLayoutDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = FTWaterFallLayoutDemo;
+				INFOPLIST_KEY_CFBundleName = FTWaterFallLayoutDemo;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -348,6 +347,9 @@
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FTWaterFallLayoutDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleExecutable = FTWaterFallLayoutDemo;
+				INFOPLIST_KEY_CFBundleName = FTWaterFallLayoutDemo;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
