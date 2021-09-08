@@ -10,24 +10,25 @@ import UIKit
 
 @objc public protocol FTWaterFallLayoutDelegate {
     
-    func ftWaterFallLayout(layout: FTWaterFallLayout, heightForItem atIndex: IndexPath) -> CGFloat
-
-    @objc optional func ftWaterFallLayout(layout: FTWaterFallLayout, heightForHeader atSection: NSInteger) -> CGFloat
+    func ftWaterFallLayout(_ layout: FTWaterFallLayout, heightForItemAt indexPath: IndexPath) -> CGFloat
+    @objc optional func ftWaterFallLayout(_ layout: FTWaterFallLayout, heightForHeaderAt section: Int) -> CGFloat
+    
 }
 
 public class FTWaterFallLayout: UICollectionViewFlowLayout {
     
-    public var numberOfColumns: NSInteger = 2
+    public var numberOfColumns: Int = 2
     public var sectionInsets: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     public var itemMaginSize: CGSize = CGSize(width: 10, height: 10)
     public var delegate : FTWaterFallLayoutDelegate?
     
-    fileprivate var itemWidth: CGFloat = 0
-    fileprivate var layoutAttributes: [UICollectionViewLayoutAttributes] = []
-    fileprivate var heightsForEachColumn: [NSInteger : CGFloat] = [:]
+    var itemWidth: CGFloat = 0
+    var layoutAttributes: [UICollectionViewLayoutAttributes] = []
+    var heightsForEachColumn: [Int : CGFloat] = [:]
     
     // MARK: - private methods
-    fileprivate func configure() {
+    
+    func configure() {
         layoutAttributes.removeAll()
         for i in 0..<self.numberOfColumns{
             heightsForEachColumn[i] = self.headerHeightForSection(section: 0) + sectionInsets.top
@@ -37,26 +38,21 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
         }
     }
     
-    fileprivate func headerHeightForSection(section: NSInteger) -> CGFloat {
-        if (delegate == nil) {
-            debugPrint("Please set FTWaterFallLayout.delegate")
-            return 0
-        }
-        if let headerHeight : CGFloat = delegate?.ftWaterFallLayout?(layout: self, heightForHeader: section) {
+    func headerHeightForSection(section: Int) -> CGFloat {
+        if let headerHeight : CGFloat = delegate?.ftWaterFallLayout?(self, heightForHeaderAt: section) {
             return headerHeight
         }
         return 0
     }
     
-    fileprivate func itemHeightForIndexPath(indexPath: IndexPath) -> CGFloat {
-        if (delegate == nil) {
-            debugPrint("Please set FTWaterFallLayout.delegate")
-            return 0
+    func itemHeightForIndexPath(indexPath: IndexPath) -> CGFloat {
+        if let height = delegate?.ftWaterFallLayout(self, heightForItemAt: indexPath) {
+            return height
         }
-        return (delegate?.ftWaterFallLayout(layout: self, heightForItem: indexPath))!
+        return 0
     }
     
-    fileprivate func getMinHeightColumn() -> NSInteger {
+    func getMinHeightColumn() -> Int {
         var minIndex = 0
         var minHeight : CGFloat = heightsForEachColumn[0]!
         for i in 0 ..< heightsForEachColumn.count{
@@ -69,7 +65,7 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
         return minIndex
     }
     
-    fileprivate func getMaxHeight() -> CGFloat {
+    func getMaxHeight() -> CGFloat {
         var maxHeight : CGFloat = heightsForEachColumn[0]!
         for i in 0 ..< heightsForEachColumn.count{
             let height : CGFloat = heightsForEachColumn[i]!
@@ -82,6 +78,7 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     }
     
     // MARK: - UICollectionViewFlowLayout requied methods
+    
     public override func prepare() {
         self.configure()
         
@@ -101,14 +98,15 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     }
     
     public override var collectionViewContentSize: CGSize {
-        
         return CGSize(width: (self.collectionView?.bounds.size.width)!, height: self.getMaxHeight())
     }
+    
     public override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
         return layoutAttributes
     }
+    
     public override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return layoutAttributes[indexPath.item]
     }
+    
 }
