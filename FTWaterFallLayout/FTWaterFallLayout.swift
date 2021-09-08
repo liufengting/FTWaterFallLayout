@@ -26,6 +26,13 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     var layoutAttributes: [UICollectionViewLayoutAttributes] = []
     var heightsForEachColumn: [Int : CGFloat] = [:]
     
+    public func setupWith(numberOfColumns: Int, sectionInsets: UIEdgeInsets, itemMaginSize: CGSize, delegate: FTWaterFallLayoutDelegate) {
+        self.numberOfColumns = numberOfColumns
+        self.sectionInsets = sectionInsets
+        self.itemMaginSize = itemMaginSize
+        self.delegate = delegate
+    }
+    
     // MARK: - private methods
     
     func configure() {
