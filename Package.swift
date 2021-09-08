@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "FTImageSize",
+    name: "FTWaterFallLayout",
     platforms: [ .iOS(.v12), .macOS(.v10_14)],
     products: [
         .library(name: "FTWaterFallLayout", targets: ["FTWaterFallLayout"]),
