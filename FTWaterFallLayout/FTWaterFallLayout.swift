@@ -12,7 +12,8 @@ import UIKit
     
     func ftWaterFallLayout(_ layout: FTWaterFallLayout, heightForItemAt indexPath: IndexPath) -> CGFloat
     @objc optional func ftWaterFallLayout(_ layout: FTWaterFallLayout, heightForHeaderAt section: Int) -> CGFloat
-    
+    @objc optional func ftWaterFallLayout(_ layout: FTWaterFallLayout, heightForFooterAt section: Int) -> CGFloat
+
 }
 
 public class FTWaterFallLayout: UICollectionViewFlowLayout {
@@ -26,6 +27,9 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     var layoutAttributes: [UICollectionViewLayoutAttributes] = []
     var heightsForEachColumn: [Int : CGFloat] = [:]
     
+    var headerAttributes: UICollectionViewLayoutAttributes?
+    var footerAttributes: UICollectionViewLayoutAttributes?
+
     public func setupWith(numberOfColumns: Int, sectionInsets: UIEdgeInsets, itemMaginSize: CGSize, delegate: FTWaterFallLayoutDelegate) {
         self.numberOfColumns = numberOfColumns
         self.sectionInsets = sectionInsets
@@ -46,7 +50,7 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     }
     
     func headerHeightForSection(section: Int) -> CGFloat {
-        if let headerHeight : CGFloat = delegate?.ftWaterFallLayout?(self, heightForHeaderAt: section) {
+        if let headerHeight = delegate?.ftWaterFallLayout?(self, heightForHeaderAt: section) {
             return headerHeight
         }
         return 0
@@ -55,6 +59,13 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     func itemHeightForIndexPath(indexPath: IndexPath) -> CGFloat {
         if let height = delegate?.ftWaterFallLayout(self, heightForItemAt: indexPath) {
             return height
+        }
+        return 0
+    }
+    
+    func footerHeightForSection(section: Int) -> CGFloat {
+        if let footerHeight = delegate?.ftWaterFallLayout?(self, heightForFooterAt: section) {
+            return footerHeight
         }
         return 0
     }
@@ -89,6 +100,16 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     public override func prepare() {
         self.configure()
         
+        if let _ = self.collectionView?.numberOfSections {
+            let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: IndexPath(item: 0, section: 0))
+            attribute.frame = CGRect(x: 0, y: 0, width: self.collectionView!.bounds.width, height: self.headerHeightForSection(section: 0))
+            self.headerAttributes = attribute
+            
+            let fa = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, with: IndexPath(item: 0, section: 0))
+            fa.frame = CGRect(x: 0, y: self.getMaxHeight(), width: self.collectionView!.bounds.width, height: self.footerHeightForSection(section: 0))
+            self.footerAttributes = fa
+        }
+        
         let itemCount = self.collectionView!.numberOfItems(inSection: 0)
         for i in 0 ..< itemCount{
             let minHeightColumn = getMinHeightColumn()
@@ -114,6 +135,15 @@ public class FTWaterFallLayout: UICollectionViewFlowLayout {
     
     public override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return layoutAttributes[indexPath.item]
+    }
+    
+    public override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        if elementKind == UICollectionView.elementKindSectionHeader {
+            return headerAttributes
+        } else {
+            return footerAttributes
+        }
+        
     }
     
 }
