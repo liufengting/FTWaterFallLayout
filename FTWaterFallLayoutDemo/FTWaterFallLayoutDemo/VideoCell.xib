@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19115.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19107.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VideoCell" customModule="FTWaterFallLayoutDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="181" height="273"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="181" height="273"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBv-DG-oRY">
+                        <rect key="frame" x="0.0" y="193" width="181" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91R-TV-yLK">
+                                <rect key="frame" x="151" y="54" width="22" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="重庆北碚区新冠肺炎疫情防控指挥部6日晚通报，校址位于该区的西南大学当天发现1名市外返渝学生检测结果异常。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsV-1R-KkM">
+                                <rect key="frame" x="8" y="8" width="165" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MB9-Us-kW4">
+                                <rect key="frame" x="129" y="52" width="20" height="20"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="fPH-Ne-FWg"/>
+                                    <constraint firstAttribute="height" constant="20" id="hBw-3j-Arb"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBc-Uv-cLU">
+                                <rect key="frame" x="8" y="52" width="20" height="20"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="dGo-yK-yQx"/>
+                                    <constraint firstAttribute="width" constant="20" id="fim-9l-ctn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="西南大学" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM0-zq-fw0">
+                                <rect key="frame" x="36" y="53.5" width="58" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MB9-Us-kW4" firstAttribute="centerY" secondItem="91R-TV-yLK" secondAttribute="centerY" id="22h-yb-Wrd"/>
+                            <constraint firstAttribute="trailing" secondItem="91R-TV-yLK" secondAttribute="trailing" constant="8" id="2pa-mf-ltw"/>
+                            <constraint firstAttribute="trailing" secondItem="CsV-1R-KkM" secondAttribute="trailing" constant="8" id="3z1-ha-ery"/>
+                            <constraint firstItem="CsV-1R-KkM" firstAttribute="leading" secondItem="lBv-DG-oRY" secondAttribute="leading" constant="8" id="8xg-RN-whv"/>
+                            <constraint firstItem="iBc-Uv-cLU" firstAttribute="leading" secondItem="lBv-DG-oRY" secondAttribute="leading" constant="8" id="IEh-FU-NFc"/>
+                            <constraint firstItem="JM0-zq-fw0" firstAttribute="centerY" secondItem="iBc-Uv-cLU" secondAttribute="centerY" id="McI-VV-Pac"/>
+                            <constraint firstItem="MB9-Us-kW4" firstAttribute="centerY" secondItem="iBc-Uv-cLU" secondAttribute="centerY" id="bAW-TQ-358"/>
+                            <constraint firstAttribute="bottom" secondItem="iBc-Uv-cLU" secondAttribute="bottom" constant="8" id="bmU-wa-hGg"/>
+                            <constraint firstAttribute="height" constant="80" id="gDd-Lj-52W"/>
+                            <constraint firstItem="91R-TV-yLK" firstAttribute="leading" secondItem="MB9-Us-kW4" secondAttribute="trailing" constant="2" id="nck-IG-rOG"/>
+                            <constraint firstItem="JM0-zq-fw0" firstAttribute="leading" secondItem="iBc-Uv-cLU" secondAttribute="trailing" constant="8" symbolic="YES" id="y2f-Rj-ojU"/>
+                            <constraint firstItem="CsV-1R-KkM" firstAttribute="top" secondItem="lBv-DG-oRY" secondAttribute="top" constant="8" id="zpn-Po-WmH"/>
+                        </constraints>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1T-r0-dbH">
+                        <rect key="frame" x="0.0" y="0.0" width="181" height="193"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="lBv-DG-oRY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Hyo-Fg-IAl"/>
+                <constraint firstAttribute="bottom" secondItem="lBv-DG-oRY" secondAttribute="bottom" id="Z2c-WV-0Tw"/>
+                <constraint firstItem="Q1T-r0-dbH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="csn-S4-tGU"/>
+                <constraint firstAttribute="trailing" secondItem="Q1T-r0-dbH" secondAttribute="trailing" id="mEn-nq-73V"/>
+                <constraint firstItem="Q1T-r0-dbH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mhm-Gr-Tey"/>
+                <constraint firstItem="lBv-DG-oRY" firstAttribute="top" secondItem="Q1T-r0-dbH" secondAttribute="bottom" id="wJi-cK-xz3"/>
+                <constraint firstAttribute="trailing" secondItem="lBv-DG-oRY" secondAttribute="trailing" id="yyu-2v-tF2"/>
+            </constraints>
+            <size key="customSize" width="181" height="273"/>
+            <connections>
+                <outlet property="avatarImageView" destination="iBc-Uv-cLU" id="riI-BX-hnK"/>
+                <outlet property="contentImageView" destination="Q1T-r0-dbH" id="iAw-AV-d8k"/>
+                <outlet property="contentLabel" destination="CsV-1R-KkM" id="eKX-mV-0Xu"/>
+                <outlet property="nameLabel" destination="JM0-zq-fw0" id="0Jn-2N-I7I"/>
+                <outlet property="praiseLabel" destination="91R-TV-yLK" id="F4v-5u-QNP"/>
+            </connections>
+            <point key="canvasLocation" x="226.81159420289856" y="183.14732142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

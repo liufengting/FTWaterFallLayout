@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A584E2026F47C2000C3790D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A584E1F26F47C2000C3790D /* AlamofireImage */; };
 		2ADDCBDC268DA3CD00210027 /* FTWaterFallLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 2ADDCBDB268DA3CD00210027 /* FTWaterFallLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2ADDCC1B268DA4A100210027 /* FTWaterFallLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDCC1A268DA4A100210027 /* FTWaterFallLayout.swift */; };
 /* End PBXBuildFile section */
@@ -22,6 +23,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A584E2026F47C2000C3790D /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +83,9 @@
 			dependencies = (
 			);
 			name = FTWaterFallLayout;
+			packageProductDependencies = (
+				2A584E1F26F47C2000C3790D /* AlamofireImage */,
+			);
 			productName = FTWaterFallLayout;
 			productReference = 2ADDCBD8268DA3CD00210027 /* FTWaterFallLayout.framework */;
 			productType = "com.apple.product-type.framework";
@@ -109,6 +114,9 @@
 				Base,
 			);
 			mainGroup = 2ADDCBCE268DA3CD00210027;
+			packageReferences = (
+				2A584E1E26F47C2000C3790D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 2ADDCBD9268DA3CD00210027 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -343,6 +351,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2A584E1E26F47C2000C3790D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2A584E1F26F47C2000C3790D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A584E1E26F47C2000C3790D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2ADDCBCF268DA3CD00210027 /* Project object */;
 }
